@@ -35,6 +35,7 @@ app.post('/subscribe', async (req, res) => {
   }
 
   const { topic, webhook } = req.body
+  console.log("Incoming topic", topic, "Webhook", webhook?webhook:"NONE");
 
   if (!topic || typeof topic !== 'string') {
     res.status(400).send({
